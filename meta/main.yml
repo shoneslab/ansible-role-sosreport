@@ -3,6 +3,7 @@ galaxy_info:
   description: Install and generate canonical sosreport on ubuntu machines.
   company: shoneslab
   license: "license (BSD, MIT)"
+  version: 1.0.0
   min_ansible_version: 2.0
   platforms:
     - name: Ubuntu
