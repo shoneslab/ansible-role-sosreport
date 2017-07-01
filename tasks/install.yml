@@ -1,0 +1,24 @@
+---
+- name: install prereq
+  apt:
+    name: software-properties-common
+    state: present
+  become: true
+
+- name: add canonical support tools apt repo
+  apt_repository:
+    state: present
+    repo: "{{ sosreport_apt_repo }}"
+  become: true
+
+- name: update apt packages
+  apt:
+    update_cache: yes
+    cache_valid_time: 86400
+  become: true
+
+- name: install sosreport
+  apt:
+    name: sosreport
+    state: present
+  become: true

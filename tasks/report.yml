@@ -1,0 +1,48 @@
+---
+
+- name: genertae sosreport
+  shell: "sosreport -a --name={{ sosreport_customer_name }} --case-id={{ sosreport_caseid }} --batch"
+  become: true
+
+- name: find the latest generated file
+  find:
+    path: "/tmp"
+    age: "-360"
+    age_stamp: atime
+    patterns: "sosreport-{{ sosreport_customer_name }}.{{ sosreport_caseid }}-*.tar.xz"
+  register: reg_sosreport
+
+- name: stat for the sosreport
+  stat:
+    path: "{{ reg_sosreport.files[0]['path'] }}"
+  register: reg_stat_sosreport
+
+- name: change file permissions
+  file:
+    name: "{{ reg_sosreport.files[0]['path'] }}"
+    mode: 755
+  become: true
+  when:
+    - reg_stat_sosreport.stat.exists is defined
+    - reg_stat_sosreport.stat.exists
+
+- name: ensure the destination directory
+  file:
+    path: "{{ sosreport_report_dest_path }}"
+    state: directory
+    mode: 0755
+  delegate_to: localhost
+  become: false
+  when:
+    - reg_stat_sosreport.stat.exists is defined
+    - reg_stat_sosreport.stat.exists
+
+- name: fetch the remote file to local
+  fetch:
+    src: "{{ reg_sosreport.files[0]['path'] }}"
+    dest: "{{ sosreport_report_dest_path }}"
+    flat: yes
+  become: true
+  when:
+    - reg_stat_sosreport.stat.exists is defined
+    - reg_stat_sosreport.stat.exists
