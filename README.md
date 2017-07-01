@@ -1,5 +1,6 @@
 sosreport
 =========
+[![Build Status](https://travis-ci.org/shoneslab/ansible-role-sosreport.svg?branch=master)](https://travis-ci.org/shoneslab/ansible-role-sosreport)
 
 Ansible role install canonical sosreport utility on ubuntu machines and get the sosreport to the ansible control machine.
 
