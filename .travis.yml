@@ -1,10 +1,6 @@
 ---
 language: python
 python: "2.7"
-#before_install:
-#  - sudo apt-get install -qq python-apt python-pycurl
-
-# Use the new container infrastructure
 sudo: false
 
 # Install ansible
@@ -26,7 +22,6 @@ install:
 script:
   # Basic role syntax check
   - ansible-playbook -i tests/inventory tests/test.yml --syntax-check
-  #- ansible-playbook -i tests/inventory tests/test.yml --connection=local --become -vvvv
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
