@@ -12,11 +12,11 @@ galaxy_info:
        - xenial
        - yakkety
 
-    galaxy_tags:
-      - system
-      - 'ubuntu'
-      - 'canonical'
-      - 'sos'
-      - 'sosreport'
+  galaxy_tags:
+    - system
+    - 'ubuntu'
+    - 'canonical'
+    - 'sos'
+    - 'sosreport'
 
 dependencies: []
