@@ -60,8 +60,6 @@
   delegate_to: localhost
   when: reg_sosreport | length > 0
 
-- debug: var=reg_stat_sosreport_copied
-
 - name: fetch the remote file to local
   fetch:
     src: "{{ reg_sosreport.files[0]['path'] }}"

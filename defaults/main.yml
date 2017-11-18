@@ -3,8 +3,7 @@
 
 sosreport_apt_repo: "ppa:canonical-support/support-tools"
 sosreport_temp_dir: /tmp
-#sosreport_final_dest_path: '/Users/shoneslab/temp/'
-sosreport_final_dest_path: "{{ ansible_env.HOME }}"
+sosreport_final_dest_path: "{{ lookup('env','HOME') }}/temp/"
 
 # Custome Name should be with out spaces
 sosreport_customer_name: 'shoneslab'
