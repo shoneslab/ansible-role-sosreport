@@ -10,7 +10,7 @@ install:
   - pip install ansible
   - pip install molecule
 script:
-  - molecule test
+  - molecule --debug test
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
