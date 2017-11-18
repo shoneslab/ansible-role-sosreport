@@ -1,0 +1,5 @@
+---
+- name: sosreport
+  hosts: all
+  roles:
+    - role: ansible-role-sosreport

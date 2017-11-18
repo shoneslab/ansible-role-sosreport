@@ -1,16 +1,17 @@
+---
 galaxy_info:
   author: Shone Jacob
   description: Install and generate canonical sosreport on ubuntu machines.
   company: shoneslab
   license: "license (BSD, MIT)"
-  version: 1.0.0
-  min_ansible_version: 2.0
+  version: 1.0.1
+  min_ansible_version: 2.4
   platforms:
     - name: Ubuntu
       versions:
-       - trusty
-       - xenial
-       - yakkety
+        - trusty
+        - xenial
+        - yakkety
 
   galaxy_tags:
     - system

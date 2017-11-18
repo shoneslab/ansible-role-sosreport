@@ -2,8 +2,9 @@
 # defaults file for ansible-role-sosreport
 
 sosreport_apt_repo: "ppa:canonical-support/support-tools"
-sosreport_report_dest_path: '/Users/shoneslab/temp/'
+sosreport_temp_dir: /tmp
+sosreport_final_dest_path: '/Users/jacobs2/temp/'
 
 # Custome Name should be with out spaces
 sosreport_customer_name: 'shoneslab'
-sosreport_caseid: 00123456
+sosreport_caseid: 42799
