@@ -10,7 +10,7 @@ before_install:
 install:
   - pip install ansible
   - pip install molecule
-  - pip install docker
+  #- pip install docker
   # - pip install required driver (e.g. docker, python-vagrant, shade)
 script:
   - molecule test
